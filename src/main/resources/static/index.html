@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Computers</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/scripts.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Computers</h1>
+      </header>
+      <main>
+        <section id="all-computers" class="section">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>price</th>
+                <th colspan="2" class="fit"></th>
+              </tr>
+            </thead>
+            <tbody id="rows">
+              <tr style="display: none;">
+                <td></td>
+                <td></td>
+                <td id="edit"><button class="text-primary">edit</button></td>
+                <td id="remove"><button class="text-danger">remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button id="add-computer-button" class="btn btn-primary">add computer</button>
+        </section>
+        <footer id="details" style="display: none;" class="section">
+          <h2>details</h2>
+          <div class="form-group">
+            <label class="control-label">name</label>
+            <input class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label class="control-label">price</label>
+            <input type ="number" class="form-control" name="price" step="0.01" min="0" max="100000" />
+          </div>
+          <div class="form-group">
+            <label class="control-label">is in stock?</label>
+            <input type="checkbox" name="isInStock"  />
+          </div>
+          <div class="form-group">
+            <label class="control-label">release date</label>
+            <input type = "date" class="form-control" name="releaseDate" />
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" onclick="undo()" value="Save" class="btn btn-default">Undo</button>
+            <button type="submit" onclick="put()" value="Save" class="btn btn-primary">Save</button>
+          </div>
+          <div>
+            <input type="hidden" name="id" />
+          </div>
+        </footer>
+      </main>
+    </div>
+    <div id="loading-container" style="display: none;">
+      <div id="loading-content">
+        loading...
+      </div>
+    </div>
+  </body>
+</html>
